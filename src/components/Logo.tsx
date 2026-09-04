@@ -1,9 +1,9 @@
 export function Mark({ className = "h-9 w-9" }: { className?: string }) {
   return (
     <img
-      src="/brand/logo.jpg"
+      src="/brand/logo.png"
       alt=""
-      className={`rounded-full object-cover ${className}`}
+      className={`object-contain drop-shadow-[0_2px_6px_rgba(0,0,0,0.18)] ${className}`}
     />
   )
 }

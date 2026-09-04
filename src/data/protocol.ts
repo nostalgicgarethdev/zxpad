@@ -9,7 +9,7 @@ export const PROTOCOL = {
   protocolShare: 0.2,
   launchFeeZec: 0.001,
   defaultSupply: 21_000_000,
-  site: "https://zx.cash",
+  site: "https://zxpad.world",
   zordinals: "https://www.zordinals.fun/zrunes",
   noirWallet: "https://chromewebstore.google.com/detail/noir-wallet/mfoghjbpfanobmnoemoepenjjcmfpmdn",
   xstocks: "https://xstocks.fi/",

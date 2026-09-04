@@ -4,7 +4,7 @@
 
 Launchpad that etches (or imports) Zcash zRunes, permanently pairs each one to an xStock, and pays holders in those shares.
 
-**Site:** https://zxpad.vercel.app  
+**Site:** https://zxpad.world  
 **Study surface:** [zordinals.fun/zrunes](https://www.zordinals.fun/zrunes)
 
 ## What it is

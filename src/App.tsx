@@ -15,7 +15,7 @@ export default function App() {
     <div className="bg-vault min-h-screen">
       <div className="relative z-10">
         <Header />
-        <main className="mx-auto max-w-6xl px-4 py-6 sm:px-6 sm:py-8">
+        <main className="mx-auto max-w-6xl px-4 py-8 sm:px-6 sm:py-10">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/rune/:id" element={<RuneDetail />} />
@@ -26,29 +26,49 @@ export default function App() {
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </main>
-        <footer className="border-t border-line py-10">
-          <div className="mx-auto flex max-w-6xl flex-col gap-4 px-4 sm:flex-row sm:items-center sm:justify-between sm:px-6">
-            <Link to="/" className="opacity-80 hover:opacity-100">
-              <Wordmark />
-            </Link>
-            <div className="flex flex-wrap gap-4 text-sm text-faint">
-              <Link to="/docs" className="hover:text-chalk">
-                Docs
+        <footer className="border-t border-line py-10" aria-label="Site footer">
+          <div className="mx-auto flex max-w-6xl flex-col gap-8 px-4 sm:flex-row sm:items-start sm:justify-between sm:px-6">
+            <div className="max-w-sm">
+              <Link to="/" className="opacity-90 hover:opacity-100">
+                <Wordmark />
               </Link>
-              <Link to="/launch" className="hover:text-chalk">
-                Launch
-              </Link>
-              <a href={PROTOCOL.zordinals} className="hover:text-chalk" target="_blank" rel="noreferrer">
-                zRunes
-              </a>
-              <a href={PROTOCOL.xstocks} className="hover:text-chalk" target="_blank" rel="noreferrer">
-                xStocks
-              </a>
+              <p className="mt-3 text-sm leading-relaxed text-muted">
+                Launch and explore Zcash zRunes paired to xStocks. Your wallet submits every
+                trade. ZX does not custody assets.
+              </p>
+            </div>
+            <div className="grid grid-cols-2 gap-8 text-sm">
+              <div>
+                <div className="mb-2 text-chalk">Product</div>
+                <div className="flex flex-col gap-1.5 text-muted">
+                  <Link to="/" className="hover:text-chalk">
+                    Explore
+                  </Link>
+                  <Link to="/launch" className="hover:text-chalk">
+                    Create
+                  </Link>
+                  <Link to="/docs" className="hover:text-chalk">
+                    Docs
+                  </Link>
+                </div>
+              </div>
+              <div>
+                <div className="mb-2 text-chalk">Elsewhere</div>
+                <div className="flex flex-col gap-1.5 text-muted">
+                  <a href={PROTOCOL.zordinals} className="hover:text-chalk" target="_blank" rel="noreferrer">
+                    zRunes
+                  </a>
+                  <a href={PROTOCOL.xstocks} className="hover:text-chalk" target="_blank" rel="noreferrer">
+                    xStocks
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
-          <p className="mx-auto mt-6 max-w-6xl px-4 text-xs text-faint sm:px-6">
-            Not financial advice. xStocks are third-party trackers, not equity. zRunes are a Zcash
-            metaprotocol. Prices via Yahoo Finance, Nasdaq and CoinGecko.
+          <p className="mx-auto mt-8 max-w-6xl px-4 text-xs text-faint sm:px-6">
+            Risk notice. xStocks are third-party trackers, not equity. zRunes are a Zcash
+            metaprotocol. Tokens can lose all value. Not financial advice. Prices via Yahoo
+            Finance, Nasdaq and CoinGecko.
           </p>
         </footer>
       </div>

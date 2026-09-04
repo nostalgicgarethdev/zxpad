@@ -8,7 +8,7 @@ export function RuneCard({ rune }: { rune: Rune }) {
   const mintPct = rune.supply > 0 ? (rune.minted / rune.supply) * 100 : 0
 
   return (
-    <Link to={`/rune/${rune.id}`} className="token-card block rounded-3xl p-4 sm:p-5">
+    <Link to={`/rune/${rune.id}`} className="token-card block rounded-[20px] p-4 sm:p-5">
       <div className="flex items-start gap-3">
         <Glyph glyph={rune.glyph} ticker={rune.ticker} size={44} />
         <div className="min-w-0 flex-1">

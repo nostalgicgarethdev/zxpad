@@ -62,7 +62,7 @@ export function RuneDetail() {
         ← Markets
       </Link>
 
-      <div className="glass rounded-3xl p-5 sm:p-6">
+      <div className="token-card rounded-[20px] p-5 sm:p-6">
         <div className="flex flex-wrap items-start gap-4">
           <Glyph glyph={rune.glyph} ticker={rune.ticker} size={64} />
           <div className="min-w-0 flex-1">
@@ -99,7 +99,7 @@ export function RuneDetail() {
 
       <div className="grid gap-6 lg:grid-cols-[1.35fr_0.9fr]">
         <div className="space-y-4">
-          <section className="glass rounded-3xl p-5">
+          <section className="token-card rounded-[20px] p-5">
             <div className="flex items-center justify-between">
               <h2 className="font-display text-lg">Order book</h2>
               <span className="text-[11px] text-faint">ZEC quote · 1% taker</span>
@@ -142,7 +142,7 @@ export function RuneDetail() {
             </div>
           </section>
 
-          <section className="glass rounded-3xl p-5">
+          <section className="token-card rounded-[20px] p-5">
             <div className="flex gap-2 text-sm">
               {(["trades", "holders", "buys"] as const).map((t) => (
                 <button
@@ -150,7 +150,7 @@ export function RuneDetail() {
                   type="button"
                   onClick={() => setTab(t)}
                   className={`rounded-full px-3 py-1 capitalize ${
-                    tab === t ? "bg-gold text-ink" : "text-muted"
+                    tab === t ? "bg-gold text-ink" : "bg-panel text-muted"
                   }`}
                 >
                   {t === "buys" ? "xStock buys" : t}
@@ -201,7 +201,7 @@ export function RuneDetail() {
         </div>
 
         <div className="space-y-4">
-          <section className="glass rounded-3xl p-5">
+          <section className="token-card rounded-[20px] p-5">
             <div className="flex rounded-full border border-line p-1">
               {(["buy", "sell"] as const).map((s) => (
                 <button
@@ -287,7 +287,7 @@ export function RuneDetail() {
             </p>
           </section>
 
-          <section className="glass rounded-3xl p-5">
+          <section className="token-card rounded-[20px] p-5">
             <h2 className="font-display text-lg">Vault · {rune.stock}</h2>
             <p className="mt-1 text-xs text-muted">
               {stock?.name} xStock @ {formatUsd(stockPx, 2)}. 50% of taker fees wait here until someone cranks.

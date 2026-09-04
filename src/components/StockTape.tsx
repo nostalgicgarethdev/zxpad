@@ -6,9 +6,9 @@ export function StockTape() {
   const rows = [...market.stocks, ...market.stocks]
 
   return (
-    <div className="overflow-hidden rounded-2xl border border-line bg-black/30">
-      <div className="flex items-center justify-between border-b border-line px-4 py-2">
-        <span className="text-xs font-semibold text-chalk">Live xStocks</span>
+    <div className="overflow-hidden rounded-[20px] bg-panel-2">
+      <div className="flex items-center justify-between px-4 py-2">
+        <span className="text-[13px] text-chalk">Live xStocks</span>
         <span className="text-[11px] text-faint">
           {market.isLive ? "Yahoo / Nasdaq · CoinGecko" : market.loading ? "Loading…" : "Cached"}
         </span>
@@ -21,9 +21,9 @@ export function StockTape() {
             return (
               <div
                 key={`${s.symbol}-${i}`}
-                className="min-w-[8.2rem] border-r border-white/6 px-4 py-3"
+                className="min-w-[8.2rem] border-r border-line px-4 py-3"
               >
-                <div className="font-mono text-xs font-bold text-chalk">{s.symbol}</div>
+                <div className="font-mono text-xs font-medium text-chalk">{s.symbol}</div>
                 <div className="mt-0.5 font-mono text-sm tabular-nums">
                   ${s.price.toLocaleString(undefined, { maximumFractionDigits: 2 })}
                 </div>

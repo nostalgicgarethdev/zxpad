@@ -149,7 +149,7 @@ function Section({ title, children }: { title: string; children: ReactNode }) {
 
 function Pre({ children }: { children: string }) {
   return (
-    <pre className="overflow-x-auto rounded-2xl border border-line bg-black/40 p-4 font-mono text-xs text-gold/90">
+    <pre className="overflow-x-auto rounded-[20px] bg-panel-2 p-4 font-mono text-xs text-chalk">
       {children}
     </pre>
   )

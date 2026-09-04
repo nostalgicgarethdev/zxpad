@@ -34,12 +34,12 @@ export function ToastProvider({ children }: { children: ReactNode }) {
         {items.map((t) => (
           <div
             key={t.id}
-            className={`pointer-events-auto rounded-2xl border px-4 py-3 text-sm shadow-2xl backdrop-blur-xl animate-[toast-in_220ms_ease] ${
+            className={`pointer-events-auto rounded-2xl border bg-panel px-4 py-3 text-sm shadow-sm animate-[toast-in_220ms_ease] ${
               t.kind === "ok"
-                ? "border-gold/30 bg-panel/95 text-chalk"
+                ? "border-line text-chalk"
                 : t.kind === "warn"
-                  ? "border-rose/40 bg-panel/95 text-chalk"
-                  : "border-blue/30 bg-panel/95 text-chalk"
+                  ? "border-rose/40 text-chalk"
+                  : "border-line text-chalk"
             }`}
           >
             <div className="flex items-start gap-2">

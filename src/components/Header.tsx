@@ -4,8 +4,8 @@ import { useWallet } from "../lib/wallet"
 import { Wordmark } from "./Logo"
 
 const links = [
-  { to: "/", label: "Markets", end: true },
-  { to: "/launch", label: "Launch" },
+  { to: "/", label: "Explore", end: true },
+  { to: "/launch", label: "Create" },
   { to: "/portfolio", label: "Portfolio" },
   { to: "/crank", label: "Crank" },
   { to: "/docs", label: "Docs" },
@@ -15,38 +15,33 @@ export function Header() {
   const { connected, zcashAddress, setModalOpen } = useWallet()
 
   return (
-    <header className="sticky top-0 z-40 border-b border-line bg-ink/80 backdrop-blur-xl">
-      <div className="mx-auto flex h-14 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
-        <Link to="/" className="shrink-0 transition hover:opacity-80" aria-label="ZX home">
-          <Wordmark compact />
-        </Link>
-        <nav className="hidden items-center gap-1 md:flex">
-          {links.map((l) => (
-            <NavLink
-              key={l.to}
-              to={l.to}
-              end={l.end}
-              className={({ isActive }) =>
-                `rounded-lg px-3 py-1.5 text-sm transition ${
-                  isActive ? "text-gold" : "text-muted hover:text-chalk"
-                }`
-              }
-            >
-              {l.label}
-            </NavLink>
-          ))}
-        </nav>
+    <header className="sticky top-0 z-40 px-3 pt-3 sm:px-4">
+      <div className="nav-glass mx-auto flex max-w-6xl items-center justify-between gap-3 px-3 py-1.5 sm:px-4">
+        <div className="flex min-w-0 items-center gap-3">
+          <Link to="/" className="shrink-0" aria-label="ZX home">
+            <Wordmark compact />
+          </Link>
+          <nav className="hidden items-center md:flex" aria-label="Product">
+            {links.map((l) => (
+              <NavLink
+                key={l.to}
+                to={l.to}
+                end={l.end}
+                className={({ isActive }) => `nav-pill ${isActive ? "is-active" : ""}`}
+              >
+                {l.label}
+              </NavLink>
+            ))}
+          </nav>
+        </div>
         <div className="flex shrink-0 items-center gap-2">
-          <Link
-            to="/launch"
-            className="btn-primary hidden rounded-full px-3.5 py-1.5 text-sm sm:inline-flex"
-          >
-            Pair a rune
+          <Link to="/launch" className="btn-ghost hidden rounded-full px-3.5 py-1.5 text-[13px] sm:inline-flex">
+            Create
           </Link>
           {connected && zcashAddress ? (
             <Link
               to="/portfolio"
-              className="rounded-full border border-line px-3 py-1.5 font-mono text-xs text-chalk hover:border-gold/40"
+              className="rounded-full border border-line bg-panel px-3 py-1.5 font-mono text-xs text-muted"
             >
               {shortAddr(zcashAddress, 4, 4)}
             </Link>
@@ -54,21 +49,21 @@ export function Header() {
             <button
               type="button"
               onClick={() => setModalOpen(true)}
-              className="btn-ghost rounded-full px-3.5 py-1.5 text-sm font-semibold text-chalk"
+              className="btn-primary rounded-full px-3.5 py-1.5 text-[13px]"
             >
               Connect
             </button>
           )}
         </div>
       </div>
-      <nav className="flex gap-1 overflow-x-auto border-t border-white/5 px-3 py-1.5 md:hidden scrollbar-thin">
+      <nav className="mx-auto mt-2 flex max-w-6xl gap-1 overflow-x-auto px-1 md:hidden scrollbar-thin" aria-label="Mobile">
         {links.map((l) => (
           <NavLink
             key={l.to}
             to={l.to}
             end={l.end}
             className={({ isActive }) =>
-              `shrink-0 rounded-full px-3 py-1 text-xs ${isActive ? "text-gold" : "text-muted"}`
+              `nav-pill shrink-0 ${isActive ? "is-active" : ""}`
             }
           >
             {l.label}
